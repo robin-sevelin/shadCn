@@ -8,8 +8,12 @@ import {
 } from '../lib/constants/dialogs';
 import DialogManager from './DialogManager';
 
-const Pause24 = () => {
-  const [isPause24Open, setIsPause24Open] = useState(false);
+type Props = {
+  isPause24Open: boolean;
+  setIsPause24Open: (value: boolean) => void;
+};
+
+const Pause24 = ({ isPause24Open, setIsPause24Open }: Props) => {
   const [isConfirmationOpen, setIsConfirmationOpen] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -31,7 +35,6 @@ const Pause24 = () => {
 
   return (
     <>
-      <button onClick={() => setIsPause24Open(true)}>Paus24</button>
       {hasError && (
         <DialogManager
           dialog={{
