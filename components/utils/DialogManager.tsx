@@ -6,8 +6,8 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
+import { DialogType } from '@/lib/models/types';
 import React from 'react';
-import { DialogType } from '../lib/models/types';
 
 const DialogManager = ({ dialog }: DialogType) => {
   const { open, title, description, onClose, actions } = dialog;
